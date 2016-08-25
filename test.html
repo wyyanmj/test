@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Test
+	</title>
+	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+
+</head>
+<body>
+
+<script type="text/javascript">
+	$.post('http://localhost/admin/api/news_type', {}, function (data) {
+		$.each(data['result'], function (index, value) {
+			$("#selectId").append("<option value='" + value.id + "'> " + value.name + " </option>");
+		});
+	},'json');
+</script>
+
+<select id="selectId">
+	<option>---------</option>
+</select>
+</body>
+</html>
